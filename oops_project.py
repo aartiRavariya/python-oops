@@ -15,14 +15,38 @@ class chatbook:
                             )
         
         if user_input == "1":
-            pass
+            self.signup()
         elif user_input == "2":
-            pass
+            self.signin()
         elif user_input == "3":
             pass
         elif user_input == "4":
             pass
         else:
             exit()
+
+    def signup(self):
+        email = input("enter ur email here: ")
+        password = input("Set your password: ")
+        self.username = email
+        self.password = password
+        print("Sign up successfull")
+        print("\n")
+        self.menu()
+
+    def signin(self):
+        if self.username == '' and self.password == '':
+            print("Please Sign up")
+        else:
+            uname = input("Username: ")
+            pswd = input("Password: ")
+            if uname == self.username and pswd == self.password:
+                print("Successfully signed-in")
+                self.loggedIn = True
+            else:
+                print("Invalid Credentials. Try again")
+
+        print("\n")
+        self.menu()
 
 obj = chatbook()
